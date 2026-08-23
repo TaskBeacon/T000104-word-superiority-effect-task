@@ -1,0 +1,18 @@
+# Parameter Mapping
+
+## Mapping Table
+
+| Parameter ID | Config Path | Implemented Value | Source Paper ID | Evidence (quote/figure/table) | Decision Type | Notes |
+|---|---|---|---|---|---|---|
+| contexts | `task.conditions` | word / pseudoword / illegal string / isolated letter | REICHER1969; MCCLELLAND1976 | Reicher compared words, nonwords, and single letters; McClelland Experiment 1 separated words, pseudowords, and unrelated strings. | adapted | Combines the classic controls in one balanced baseline. |
+| forced_choice | `task.response_keys` | F = left, J = right | REICHER1969; WHEELER1970 | The response is a choice between the critical letter and its paired alternative, not a lexicality judgment. | adapted | Modern symmetric keyboard mapping. |
+| critical_positions | condition suffix `p1`-`p4` | positions 1-4 equally represented | WHEELER1970; MCCLELLAND1976 | Wheeler counterbalanced tested position; McClelland used six pairs at each position within category. | direct | Every block contains both A/B variants at every position and context. |
+| array_length | `task.item_matrices` | 4 letters | REICHER1969; WHEELER1970; MCCLELLAND1976 | All core displays were four-letter items. | direct | Isolated letters occupy one of the same four spatial slots. |
+| array_geometry | `task.perceptual_geometry.slot_x`, `letter_height_deg` | approximately 1.4 deg wide; 0.42 deg high | JOHNSTON_MCCLELLAND1973, Method: Apparatus and Stimuli | Four-letter words subtended about 1.40 deg; letters were about 0.42 deg high and up to 0.33 deg wide. | direct | Fixed monospaced slots prevent kerning shifts. |
+| patterned_mask | `task.perceptual_geometry.mask_*` | 3.4 x 1.8 deg field with 72 jagged fragments | JOHNSTON_MCCLELLAND1973, Method: Masking and Figure 1 | The high-contrast mask used irregular curved and jagged contours in a 3.4 x 1.8 deg field. | adapted | Runtime line fragments reproduce the contour-density logic without external media. |
+| display_duration | `timing.display_duration` | 60 ms | WHEELER1970; JOHNSTON_MCCLELLAND1973 | Classic exposure was individualized near 75% accuracy; Johnston and McClelland reported group thresholds around 27-32 ms. | inferred | Conservative fixed first-release value for ordinary displays; no staircase is claimed. |
+| mask_duration | `timing.mask_duration` | 200 ms | JOHNSTON_MCCLELLAND1973; MCCLELLAND1976 | A patterned pre/postexposure field was critical; a white postfield removed the effect. | inferred | Explicit computerized interval replaces the apparatus field that remained visible between displays. |
+| probe_duration | `timing.probe_duration` | 2500 ms | WHEELER1970, Procedure | Instructions emphasized accuracy and a comfortable response rate. | inferred | Long enough to preserve accuracy emphasis while bounding omissions. |
+| trial_balance | `task.total_blocks`, `task.trial_per_block`, `task.condition_weights` | 2 x 32 trials; all weights 1 | WHEELER1970; MCCLELLAND1976 | Context, critical position, and paired member were counterbalanced in the classic designs. | adapted | Each block contains all 32 scheduled factor combinations exactly once. |
+| item_source | `task.item_matrices` | eight paired four-letter matrices | REICHER1969; MCCLELLAND1976, Experiment 1 examples | Pairs differ at only the tested letter; McClelland gives FARE/FADE, GARE/GADE, and EFRT/EFDT as the matching logic. | adapted | Common words were checked with the open `wordfreq` frequency table; nonwords were curated for regular vs illegal structure. |
+| feedback | trial state machine | none | WHEELER1970, Procedure | The protocol did not give trial feedback and emphasized forced guessing when necessary. | direct | Breaks report completion only. |

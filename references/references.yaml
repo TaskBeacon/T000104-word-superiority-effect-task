@@ -1,0 +1,86 @@
+task_id: T000104
+generated_at: '2026-08-23T16:11:14Z'
+selection_policy: provided_source_plus_supporting_literature
+citation_threshold: 100
+papers:
+- id: WHEELER1970
+  title: Processes in word recognition
+  authors: []
+  year: 1970
+  journal: Cognitive Psychology
+  doi_or_url: https://deepblue.lib.umich.edu/items/2150d772-b6c7-4a63-a2a1-474f361253d9
+  citation_count: 751
+  is_high_impact: false
+  open_access: true
+  used_for:
+  - primary_protocol_source
+  - forced_choice_logic
+  - word_letter_comparison
+  - threshold_procedure
+  parameter_bindings: {}
+  notes: User-provided primary source; Deep Blue provides the article record and PDF.
+- id: REICHER1969
+  title: Perceptual recognition as a function of meaningfulness of stimulus material
+  authors:
+  - Gerald M. Reicher
+  year: 1969
+  journal: Journal of Experimental Psychology
+  doi_or_url: https://doi.org/10.1037/h0027768
+  citation_count: 755
+  is_high_impact: false
+  open_access: true
+  used_for:
+  - forced_choice_logic
+  - word_nonword_letter_conditions
+  - postdisplay_mask
+  parameter_bindings:
+    task.response_mode: two-alternative letter identification
+    task.target_positions:
+    - 1
+    - 2
+    - 3
+    - 4
+  notes: Crossref citation count checked 2026-08-24; full-text preview and DOI record
+    are publicly accessible.
+- id: MCCLELLAND1976
+  title: Preliminary letter identification in the perception of words and nonwords
+  authors:
+  - James L. McClelland
+  year: 1976
+  journal: 'Journal of Experimental Psychology: Human Perception and Performance'
+  doi_or_url: https://web.stanford.edu/~jlmcc/papers/PublicationFiles/73-79_Add_To_ONLINE_Pubs/McClelland76PrelimLetterIdent.pdf
+  citation_count: 141
+  is_high_impact: true
+  open_access: true
+  used_for:
+  - word_pseudoword_illegal_string_conditions
+  - matched_critical_letters
+  - patterned_mask
+  - stimulus_examples
+  parameter_bindings:
+    task.contexts:
+    - word
+    - pseudoword
+    - illegal_string
+    task.array_length: 4
+  notes: OpenAlex citation count checked 2026-08-23; author-hosted full text.
+- id: JOHNSTON_MCCLELLAND1973
+  title: Visual factors in word perception
+  authors:
+  - James C. Johnston
+  - James L. McClelland
+  year: 1973
+  journal: Perception & Psychophysics
+  doi_or_url: https://stanford.edu/~jlmcc/papers/PublicationFiles/73-79_Add_To_ONLINE_Pubs/JohnstonMcClelland73VisualFactors.pdf
+  citation_count: 125
+  is_high_impact: false
+  open_access: true
+  used_for:
+  - patterned_mask_requirement
+  - single_letter_spatial_control
+  - visual_angle
+  - position_cueing
+  parameter_bindings:
+    task.display_width_deg: 1.4
+    task.mask_type: patterned random contours
+  notes: OpenAlex citation count checked 2026-08-23; author-hosted full text.

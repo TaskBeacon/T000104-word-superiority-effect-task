@@ -1,0 +1,19 @@
+id: T000104
+slug: word-superiority-effect-task
+title: Reicher-Wheeler Word Superiority Task
+acquisition: behavior
+variant: baseline
+cognitive_domain: [visual-word-recognition, orthographic-processing, letter-identification]
+maturity: draft
+version:
+  release_tag: v0.1.0
+contracts:
+  taps: v0.2.0
+runtime:
+  profile: psyflow
+evidence:
+  - https://deepblue.lib.umich.edu/items/2150d772-b6c7-4a63-a2a1-474f361253d9
+  - https://doi.org/10.1037/h0027768
+  - https://doi.org/10.1037/0096-1523.2.1.80
+  - https://doi.org/10.3758/BF03212406
+maintainer: [TaskBeacon]

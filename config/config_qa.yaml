@@ -1,0 +1,107 @@
+subinfo_fields:
+  - {name: subject_id, type: int, constraints: {min: 101, max: 999, digits: 3}}
+  - {name: age, type: int, constraints: {min: 18, max: 80}}
+subinfo_mapping:
+  subject_id: Participant ID (3 digits)
+  age: Age
+  Participant Information: Participant Information
+  registration_failed: Registration failed
+  registration_successful: Registration successful
+  invalid_input: "Invalid value for {field}"
+
+window: {size: [1280, 800], units: deg, screen: 0, bg_color: white, fullscreen: false, monitor_width_cm: 35.5, monitor_distance_cm: 57}
+
+task:
+  task_name: Reicher-Wheeler Word Superiority Task
+  save_path: ./outputs/qa
+  language: English
+  voice_name: en-US-GuyNeural
+  voice_enabled: false
+  total_blocks: 1
+  total_trials: 32
+  trial_per_block: 32
+  conditions: &conditions
+    [word_p1_a, word_p1_b, word_p2_a, word_p2_b, word_p3_a, word_p3_b, word_p4_a, word_p4_b,
+     pseudoword_p1_a, pseudoword_p1_b, pseudoword_p2_a, pseudoword_p2_b, pseudoword_p3_a, pseudoword_p3_b, pseudoword_p4_a, pseudoword_p4_b,
+     illegal_string_p1_a, illegal_string_p1_b, illegal_string_p2_a, illegal_string_p2_b, illegal_string_p3_a, illegal_string_p3_b, illegal_string_p4_a, illegal_string_p4_b,
+     isolated_letter_p1_a, isolated_letter_p1_b, isolated_letter_p2_a, isolated_letter_p2_b, isolated_letter_p3_a, isolated_letter_p3_b, isolated_letter_p4_a, isolated_letter_p4_b]
+  condition_weights:
+    {word_p1_a: 1, word_p1_b: 1, word_p2_a: 1, word_p2_b: 1, word_p3_a: 1, word_p3_b: 1, word_p4_a: 1, word_p4_b: 1,
+     pseudoword_p1_a: 1, pseudoword_p1_b: 1, pseudoword_p2_a: 1, pseudoword_p2_b: 1, pseudoword_p3_a: 1, pseudoword_p3_b: 1, pseudoword_p4_a: 1, pseudoword_p4_b: 1,
+     illegal_string_p1_a: 1, illegal_string_p1_b: 1, illegal_string_p2_a: 1, illegal_string_p2_b: 1, illegal_string_p3_a: 1, illegal_string_p3_b: 1, illegal_string_p4_a: 1, illegal_string_p4_b: 1,
+     isolated_letter_p1_a: 1, isolated_letter_p1_b: 1, isolated_letter_p2_a: 1, isolated_letter_p2_b: 1, isolated_letter_p3_a: 1, isolated_letter_p3_b: 1, isolated_letter_p4_a: 1, isolated_letter_p4_b: 1}
+  key_list: [f, j, space]
+  response_keys: {left: f, right: j}
+  seed_mode: same_within_sub
+  overall_seed: 104104
+  delta: 0.0
+  perceptual_geometry:
+    slot_x: [-0.525, -0.175, 0.175, 0.525]
+    letter_height_deg: 0.42
+    probe_letter_height_deg: 1.00
+    letter_font: Courier New
+    mask_width_deg: 3.4
+    mask_height_deg: 1.8
+    mask_fragment_count: 72
+    mask_line_width: 2.4
+  item_matrices: &item_matrices
+    "1":
+      - {pair_id: p1_read_head, option_a: R, option_b: H, word: [READ, HEAD], pseudoword: [RABE, HABE], illegal_string: [RQXZ, HQXZ]}
+      - {pair_id: p1_name_came, option_a: N, option_b: C, word: [NAME, CAME], pseudoword: [NULE, CULE], illegal_string: [NKQZ, CKQZ]}
+    "2":
+      - {pair_id: p2_post_past, option_a: O, option_b: A, word: [POST, PAST], pseudoword: [BOST, BAST], illegal_string: [QOXZ, QAXZ]}
+      - {pair_id: p2_read_road, option_a: E, option_b: O, word: [READ, ROAD], pseudoword: [DEAT, DOAT], illegal_string: [ZERQ, ZORQ]}
+    "3":
+      - {pair_id: p3_fare_fade, option_a: R, option_b: D, word: [FARE, FADE], pseudoword: [GARE, GADE], illegal_string: [XQRT, XQDT]}
+      - {pair_id: p3_care_case, option_a: R, option_b: S, word: [CARE, CASE], pseudoword: [NARE, NASE], illegal_string: [ZPRQ, ZPSQ]}
+    "4":
+      - {pair_id: p4_real_read, option_a: L, option_b: D, word: [REAL, READ], pseudoword: [PUAL, PUAD], illegal_string: [QXZL, QXZD]}
+      - {pair_id: p4_face_fact, option_a: E, option_b: T, word: [FACE, FACT], pseudoword: [BAFE, BAFT], illegal_string: [ZQRE, ZQRT]}
+  phase_order: [instruction, fixation, brief_display, pattern_mask, letter_probe, iti, block_break, good_bye]
+
+timing: {fixation_duration: 0.50, display_duration: 0.060, mask_duration: 0.20, probe_duration: 2.50, iti_duration: 0.50}
+
+stimuli:
+  instruction:
+    type: text
+    font: Arial
+    text: |-
+      WORD SUPERIORITY TASK
+
+      Keep your eyes on the central cross. A four-letter display, or one letter in one of four positions, will flash very briefly and will be followed by a patterned mask.
+
+      Two letters will then appear. The dark position marker shows which location is being tested. Press F for the letter on the left or J for the letter on the right.
+
+      Decide which LETTER appeared at that position. Do not decide whether the display was a word. Work accurately and guess if you are unsure.
+
+      Press SPACE to begin.
+    color: black
+    height: 0.62
+    wrapWidth: 24
+    pos: [0, 0]
+  fixation: {type: text, font: Arial, text: "+", color: black, height: 0.55, pos: [0, 0]}
+  probe_prompt: {type: text, font: Arial, text: "Which letter appeared at the marked position?", color: black, height: 0.55, wrapWidth: 22, pos: [0, 3.2]}
+  block_break: {type: text, font: Arial, text: "Block {block_number} of {total_blocks} is complete.\n\nYou may rest briefly. Keep using F for the left letter and J for the right letter.\n\nPress SPACE to continue.", color: black, height: 0.66, wrapWidth: 24, pos: [0, 0]}
+  good_bye: {type: text, font: Arial, text: "Task complete.\n\nYou completed {trial_count} letter-identification trials. Your responses have been saved.\n\nPress SPACE to exit.", color: black, height: 0.68, wrapWidth: 24, pos: [0, 0]}
+
+triggers:
+  map: {experiment_start: 1, instruction: 5, block_start: 10, fixation: 20, display_word: 31, display_pseudoword: 32, display_illegal_string: 33, display_isolated_letter: 34, pattern_mask: 40, letter_probe: 50, response_left: 61, response_right: 62, response_timeout: 63, iti: 70, block_end: 90, experiment_end: 99}
+  driver: {type: serial_url, url: "loop://", baudrate: 115200, timeout: 1}
+  policy: {strict: false}
+  timing: {post_delay_s: 0.001}
+
+qa:
+  output_dir: outputs/qa
+  enable_scaling: true
+  timing_scale: 0.05
+  min_frames: 1
+  strict: false
+  max_wait_s: 45.0
+  acceptance_criteria:
+    required_columns: [trial_id, block_id, condition, context, target_position, target_letter, correct_key, response, rt, correct, outcome]
+    expected_trial_count: 32
+    allowed_keys: [f, j, space]
+    triggers_required: true
+responder:
+  type: responders.task_sampler:TaskSamplerResponder
+  kwargs: {continue_key: space, accuracy: 0.88, rt_mean_s: 0.05, rt_sd_s: 0.005, forced_error_trials: [4, 17], forced_timeout_trials: [9]}

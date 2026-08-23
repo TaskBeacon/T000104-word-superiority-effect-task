@@ -1,0 +1,25 @@
+{
+  "id": "WHEELER1970",
+  "title": "Processes in word recognition",
+  "authors": [],
+  "year": 1970,
+  "journal": "Cognitive Psychology",
+  "doi_or_url": "https://deepblue.lib.umich.edu/items/2150d772-b6c7-4a63-a2a1-474f361253d9",
+  "citation_count": 751,
+  "is_high_impact": false,
+  "open_access": true,
+  "used_for": [
+    "primary_protocol_source",
+    "forced_choice_logic",
+    "word_letter_comparison",
+    "threshold_procedure"
+  ],
+  "parameter_bindings": {},
+  "notes": "User-provided primary source; Deep Blue provides the article record and PDF.",
+  "source_kind": "url",
+  "source_locator": "https://deepblue.lib.umich.edu/items/2150d772-b6c7-4a63-a2a1-474f361253d9",
+  "attachments": {
+    "paper_pdf": null,
+    "methods_path": null
+  }
+}
