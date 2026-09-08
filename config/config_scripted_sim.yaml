@@ -86,7 +86,7 @@ stimuli:
 
 triggers:
   map: {experiment_start: 1, instruction: 5, block_start: 10, fixation: 20, display_word: 31, display_pseudoword: 32, display_illegal_string: 33, display_isolated_letter: 34, pattern_mask: 40, letter_probe: 50, response_left: 61, response_right: 62, response_timeout: 63, iti: 70, block_end: 90, experiment_end: 99}
-  driver: {type: serial_url, url: "loop://", baudrate: 115200, timeout: 1}
+  driver: {type: mock, print_codes: true}
   policy: {strict: false}
   timing: {post_delay_s: 0.001}
 
